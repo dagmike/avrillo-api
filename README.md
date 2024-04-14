@@ -4,7 +4,9 @@
 This application uses Laravel Sail in order to run. Under the hood this uses docker therefore docker must be installed in order to proceed.
 
 1. Clone this git repo (or unzip the application)
-2. Run the command ```sail up```
+2. Run the command ```composer install```
+3. Copy the ```.env.example``` file and rename it ```.env```
+4. Run the command ```./vendor/bin/sail up```
 
 Application should be running on http://localhost
 
@@ -16,6 +18,11 @@ I have chosen to only use a static API token (singular) given the scope of the t
 Authorization is made using a a Bearer Token. This means sending a header with each request of:
 
 ```Authorization: Bearer myexampleapitokenforapi```
+
+## Testing
+There are both feature and unit tests to be ran. You can run them with the following command (after booting the application):
+
+```sail tests```
 
 ## Endpoint
 There are 2 endpoints to the application, one to retrieve 5 quotes from the API and one to refresh those quotes and return a new set of quotes.
